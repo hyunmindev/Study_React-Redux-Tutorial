@@ -1,12 +1,8 @@
-import { useState } from 'react';
-
-import store from 'src/store/reducers';
+import { useSelector } from 'react-redux';
 
 function Title() {
-  const [state, setState] = useState(0);
-  store.subscribe(() => setState(store.getState()));
-
-  return <h1>{state}</h1>;
+  const number = useSelector((state) => state);
+  return <h1>{number}</h1>;
 }
 
 export default Title;
