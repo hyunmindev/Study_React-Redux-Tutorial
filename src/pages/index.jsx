@@ -1,21 +1,12 @@
-import Title from 'src/components/Title';
-
-import { useDispatch } from 'react-redux';
+import AddNumberRoot from 'src/components/AddNumberRoot';
+import DisplayNumberRoot from 'src/components/DisplayNumberRoot';
 
 function Index() {
-  const dispatch = useDispatch();
-  const decreaseState = () => dispatch({ type: 'DECREMENT' });
-  const increaseState = () => dispatch({ type: 'INCREMENT' });
-
   return (
     <>
-      <button type='button' onClick={decreaseState}>
-        decrease
-      </button>
-      <Title />
-      <button type='button' onClick={increaseState}>
-        increase
-      </button>
+      <h1>Root</h1>
+      <AddNumberRoot />
+      <DisplayNumberRoot />
     </>
   );
 }
