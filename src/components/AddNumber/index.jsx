@@ -1,11 +1,11 @@
 import { useState } from 'react';
-import PropTypes from 'prop-types';
+import store from 'src/store';
 
-function AddNumber({ onAdd }) {
+function AddNumber() {
   const [state, setState] = useState('');
 
   const handleClick = () => {
-    onAdd(+state);
+    store.dispatch({ type: 'CHANGE', payload: +state });
   };
   return (
     <div>
@@ -17,9 +17,5 @@ function AddNumber({ onAdd }) {
     </div>
   );
 }
-
-AddNumber.propTypes = {
-  onAdd: PropTypes.func.isRequired,
-};
 
 export default AddNumber;

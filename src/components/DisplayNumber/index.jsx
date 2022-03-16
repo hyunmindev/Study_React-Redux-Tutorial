@@ -1,6 +1,14 @@
-import PropTypes from 'prop-types';
+import { useEffect, useState } from 'react';
 
-function DisplayNumber({ state }) {
+import store from 'src/store';
+
+function DisplayNumber() {
+  const [state, setState] = useState(0);
+  useEffect(() => {
+    store.subscribe(() => {
+      setState(store.getState());
+    });
+  }, []);
   return (
     <div>
       <h1>Display Number</h1>
@@ -8,9 +16,5 @@ function DisplayNumber({ state }) {
     </div>
   );
 }
-
-DisplayNumber.propTypes = {
-  state: PropTypes.number.isRequired,
-};
 
 export default DisplayNumber;

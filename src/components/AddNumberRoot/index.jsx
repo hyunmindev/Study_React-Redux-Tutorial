@@ -1,19 +1,14 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 import AddNumber from 'src/components/AddNumber';
 
-function AddNumberRoot({ onAdd }) {
+function AddNumberRoot() {
   return (
     <div>
       <h1>Add Number Root</h1>
-      <AddNumber onAdd={onAdd} />
+      <AddNumber />
     </div>
   );
 }
-
-AddNumberRoot.propTypes = {
-  onAdd: PropTypes.func.isRequired,
-};
 
 export default React.memo(AddNumberRoot);
