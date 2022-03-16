@@ -1,12 +1,18 @@
-import DisplayNumber from '../DisplayNumber';
+import PropTypes from 'prop-types';
 
-function DisplayNumberRoot() {
+import DisplayNumber from 'src/components/DisplayNumber';
+
+function DisplayNumberRoot({ state }) {
   return (
     <div>
       <h1>Display Number Root</h1>
-      <DisplayNumber />
+      <DisplayNumber state={state} />
     </div>
   );
 }
+
+DisplayNumberRoot.propTypes = {
+  state: PropTypes.number.isRequired,
+};
 
 export default DisplayNumberRoot;
