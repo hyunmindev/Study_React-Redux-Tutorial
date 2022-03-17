@@ -1,14 +1,12 @@
-import React from 'react';
-
-import AddNumberContainer from 'src/containers/AddNumber';
+import AddNumber from 'src/components/AddNumber';
 
 function AddNumberRoot() {
   return (
     <div>
       <h1>Add Number Root</h1>
-      <AddNumberContainer />
+      <AddNumber />
     </div>
   );
 }
 
-export default React.memo(AddNumberRoot);
+export default AddNumberRoot;

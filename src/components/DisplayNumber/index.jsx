@@ -1,18 +1,13 @@
-import PropTypes from 'prop-types';
+import { useSelector } from 'react-redux';
 
-function DisplayNumber({ state, unit }) {
+function DisplayNumber() {
+  const number = useSelector((state) => state.number);
   return (
     <div>
       <h1>Display Number</h1>
-      <input value={state} readOnly />
-      {unit}
+      <input value={number} readOnly />
     </div>
   );
 }
-
-DisplayNumber.propTypes = {
-  state: PropTypes.number.isRequired,
-  unit: PropTypes.string.isRequired,
-};
 
 export default DisplayNumber;

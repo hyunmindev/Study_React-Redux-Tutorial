@@ -1,10 +1,10 @@
-import DisplayNumberContainer from 'src/containers/DisplayNumber';
+import DisplayNumber from 'src/components/DisplayNumber';
 
 function DisplayNumberRoot() {
   return (
     <div>
       <h1>Display Number Root</h1>
-      <DisplayNumberContainer unit='kg' />
+      <DisplayNumber />
     </div>
   );
 }

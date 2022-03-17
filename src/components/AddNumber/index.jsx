@@ -1,16 +1,16 @@
 import { useState } from 'react';
-import PropTypes from 'prop-types';
+import { useDispatch } from 'react-redux';
 
-function AddNumber({ onAdd }) {
+function AddNumber() {
   const [state, setState] = useState('');
-
+  const dispatch = useDispatch();
   return (
     <div>
       <h1>Add Number</h1>
       <button
         type='button'
         onClick={() => {
-          onAdd(state);
+          dispatch({ type: 'CHANGE', payload: +state });
         }}
       >
         +
@@ -19,9 +19,5 @@ function AddNumber({ onAdd }) {
     </div>
   );
 }
-
-AddNumber.propTypes = {
-  onAdd: PropTypes.func.isRequired,
-};
 
 export default AddNumber;
