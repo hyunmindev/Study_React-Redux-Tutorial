@@ -1,21 +1,27 @@
 import { useState } from 'react';
-import store from 'src/store';
+import PropTypes from 'prop-types';
 
-function AddNumber() {
+function AddNumber({ onAdd }) {
   const [state, setState] = useState('');
 
-  const handleClick = () => {
-    store.dispatch({ type: 'CHANGE', payload: +state });
-  };
   return (
     <div>
       <h1>Add Number</h1>
-      <button type='button' onClick={handleClick}>
+      <button
+        type='button'
+        onClick={() => {
+          onAdd(state);
+        }}
+      >
         +
       </button>
       <input value={state} onInput={({ target }) => setState(target.value)} />
     </div>
   );
 }
+
+AddNumber.propTypes = {
+  onAdd: PropTypes.func.isRequired,
+};
 
 export default AddNumber;

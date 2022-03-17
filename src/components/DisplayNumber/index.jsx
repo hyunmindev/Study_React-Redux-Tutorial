@@ -1,20 +1,18 @@
-import { useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
 
-import store from 'src/store';
-
-function DisplayNumber() {
-  const [state, setState] = useState(0);
-  useEffect(() => {
-    store.subscribe(() => {
-      setState(store.getState());
-    });
-  }, []);
+function DisplayNumber({ state, unit }) {
   return (
     <div>
       <h1>Display Number</h1>
       <input value={state} readOnly />
+      {unit}
     </div>
   );
 }
+
+DisplayNumber.propTypes = {
+  state: PropTypes.number.isRequired,
+  unit: PropTypes.string.isRequired,
+};
 
 export default DisplayNumber;
