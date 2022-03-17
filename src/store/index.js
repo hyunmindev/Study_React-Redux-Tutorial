@@ -1,10 +1,5 @@
 import { createStore } from 'redux';
+import rootReducer from './rootReducer';
 
-export default createStore((state = 0, { type, payload } = {}) => {
-  switch (type) {
-    case 'CHANGE':
-      return state + payload;
-    default:
-      return state;
-  }
-});
+const store = createStore(rootReducer);
+export default store;

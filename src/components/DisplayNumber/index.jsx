@@ -1,7 +1,8 @@
 import { useSelector } from 'react-redux';
 
 function DisplayNumber() {
-  const number = useSelector((state) => state.number);
+  console.log('number');
+  const number = useSelector((state) => state.number.number);
   return (
     <div>
       <h1>Display Number</h1>
