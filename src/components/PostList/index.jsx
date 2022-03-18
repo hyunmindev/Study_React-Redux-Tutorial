@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getPosts } from 'src/store/rootThunks';
+import { getPosts } from 'src/store/rootAction';
 
 function PostList() {
   const dispatch = useDispatch();

@@ -1,7 +1,6 @@
 import { useDispatch } from 'react-redux';
 
-import { increase, decrease, changeText } from 'src/store/rootAction';
-import { decreaseAsync, increaseAsync } from 'src/store/rootThunks';
+import { increase, decrease, changeText, decreaseAsync, increaseAsync } from 'src/store/rootAction';
 
 function Change() {
   const dispatch = useDispatch();

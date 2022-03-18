@@ -6,10 +6,10 @@ import PostList from 'src/components/PostList';
 function Index() {
   return (
     <>
-      {/* <h1>Root</h1> */}
-      {/* <ChangeRoot /> */}
-      {/* <DisplayNumberRoot /> */}
-      {/* <DisplayTextRoot /> */}
+      <h1>Root</h1>
+      <ChangeRoot />
+      <DisplayNumberRoot />
+      <DisplayTextRoot />
       <PostList />
     </>
   );
