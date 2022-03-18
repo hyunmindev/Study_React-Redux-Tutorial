@@ -1,2 +1,2 @@
-export * from './number/actions';
+export * from './counter/actions';
 export * from './text/actions';

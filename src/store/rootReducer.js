@@ -1,10 +1,10 @@
 import { combineReducers } from 'redux';
 
-import number from './number/reducers';
+import counter from './counter/reducers';
 import text from './text/reducers';
 
 const rootReducer = combineReducers({
-  number,
+  counter,
   text,
 });
 
