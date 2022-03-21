@@ -1,19 +1,16 @@
-import { CHANGE_TEXT } from 'src/store/rootActionType';
+import { createReducer } from '@reduxjs/toolkit';
+
+import { changeText } from 'src/store/rootAction';
 
 const initialState = {
   text: '',
 };
 
-const reducer = (state = initialState, { type, payload } = {}) => {
-  switch (type) {
-    case CHANGE_TEXT:
-      return {
-        ...state,
-        text: payload,
-      };
-    default:
-      return state;
-  }
-};
+const reducer = createReducer(initialState, {
+  [changeText]: (state, { payload }) => ({
+    ...state,
+    text: payload,
+  }),
+});
 
 export default reducer;

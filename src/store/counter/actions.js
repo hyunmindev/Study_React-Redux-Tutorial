@@ -1,17 +1,7 @@
 import { DECREASE, DECREASE_ASYNC, INCREASE, INCREASE_ASYNC } from 'src/store/rootActionType';
+import { createAction } from '@reduxjs/toolkit';
 
-export const increase = () => ({
-  type: INCREASE,
-});
-
-export const decrease = () => ({
-  type: DECREASE,
-});
-
-export const increaseAsync = () => ({
-  type: INCREASE_ASYNC,
-});
-
-export const decreaseAsync = () => ({
-  type: DECREASE_ASYNC,
-});
+export const increase = createAction(INCREASE);
+export const decrease = createAction(DECREASE);
+export const increaseAsync = createAction(INCREASE_ASYNC);
+export const decreaseAsync = createAction(DECREASE_ASYNC);

@@ -1,6 +1,4 @@
 import { CHANGE_TEXT } from 'src/store/rootActionType';
+import { createAction } from '@reduxjs/toolkit';
 
-export const changeText = (text) => ({
-  type: CHANGE_TEXT,
-  payload: text,
-});
+export const changeText = createAction(CHANGE_TEXT);

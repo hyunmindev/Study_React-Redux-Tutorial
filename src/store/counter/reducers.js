@@ -1,24 +1,20 @@
-import { DECREASE, INCREASE } from 'src/store/rootActionType';
+import { createReducer } from '@reduxjs/toolkit';
+
+import { decrease, increase } from 'src/store/rootAction';
 
 const initialState = {
   number: 0,
 };
 
-const reducer = (state = initialState, { type } = {}) => {
-  switch (type) {
-    case INCREASE:
-      return {
-        ...state,
-        number: state.number + 1,
-      };
-    case DECREASE:
-      return {
-        ...state,
-        number: state.number - 1,
-      };
-    default:
-      return state;
-  }
-};
+const reducer = createReducer(initialState, {
+  [decrease]: (state) => ({
+    ...state,
+    number: state.number - 1,
+  }),
+  [increase]: (state) => ({
+    ...state,
+    number: state.number + 1,
+  }),
+});
 
 export default reducer;

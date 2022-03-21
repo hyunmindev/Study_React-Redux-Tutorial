@@ -1,4 +1,6 @@
-import { GET_POSTS_SUCCESS, GET_POSTS_ERROR } from 'src/store/rootActionType';
+import { createReducer } from '@reduxjs/toolkit';
+
+import { getPostsSuccess, getPostsError } from 'src/store/rootAction';
 
 const initialState = {
   isLoading: false,
@@ -6,24 +8,18 @@ const initialState = {
   error: null,
 };
 
-const reducer = (state = initialState, { type, payload } = {}) => {
-  switch (type) {
-    case GET_POSTS_SUCCESS:
-      return {
-        ...state,
-        isLoading: false,
-        data: payload,
-        error: null,
-      };
-    case GET_POSTS_ERROR:
-      return {
-        ...state,
-        isLoading: false,
-        error: payload,
-      };
-    default:
-      return state;
-  }
-};
+const reducer = createReducer(initialState, {
+  [getPostsSuccess]: (state, { payload }) => ({
+    ...state,
+    isLoading: false,
+    data: payload,
+    error: null,
+  }),
+  [getPostsError]: (state, { payload }) => ({
+    ...state,
+    isLoading: false,
+    error: payload,
+  }),
+});
 
 export default reducer;
